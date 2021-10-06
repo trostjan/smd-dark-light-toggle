@@ -1,0 +1,99 @@
+@use '../util' as *;
+
+.cards{
+    display: grid;
+    gap:rem(32);
+    margin: rem(42) auto rem(52) auto;
+
+    @include breakpoint(medium){
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+    @include breakpoint(large){
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.card{
+    position: relative;
+    background-color: var(--card-bg);
+    padding: rem(32) 0 rem(25) 0;
+    text-align: center;
+    border-radius: rem(5);
+    overflow: hidden;
+    cursor:pointer;
+
+    &:hover{
+        background-color: var(--card-hover);
+    }
+
+    &::before{
+        content:'';
+        position:absolute;
+        background:var(--social-media-border);
+        width:100%;
+        height: rem(5);
+        left:0;
+        top:0;  
+    }
+
+    &__twitter{
+        --social-media-border:var(--twitter);
+    }
+
+    &__instagram{
+        --social-media-border:var(--instagram);
+    }
+
+    &__youtube{
+        --social-media-border:var(--youtube);
+    }
+
+    &__platform{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: rem(30) ;
+    }
+
+    &__username{
+        color: var(--text-color2);
+        margin-left: rem(9) ;
+        font-size: rem(12);
+        font-weight: 700;
+    }
+
+    &__count{
+        color:var(--text-color);
+        font-size: rem(42);
+        font-weight: 700;
+    }
+
+    &__followers{
+        color:var(--text-color2);
+        text-transform: uppercase;
+        font-size: rem(10);
+        letter-spacing: rem(4);
+        margin-bottom: rem(30);
+    }
+
+    &__change{
+        display: flex;
+        justify-content: center ;
+        align-items: center;
+    }
+
+    &__today{
+        font-size: rem(12);
+        font-weight: 700;
+        margin-left: rem(5);
+
+        &--up{
+            color:var(--limegreen)
+        }
+
+        &--down{
+            color:var(--brightred)
+        }
+    }
+}

@@ -1,0 +1,36 @@
+@use '../util' as *;
+
+.card__small{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    row-gap: rem(30);
+    background-color: var(--card-bg);
+    padding: rem(27) rem(31) rem(27) rem(24);
+    cursor:pointer;
+
+    &:hover{
+        background-color: var(--card-hover);
+    }
+
+    &__metric{
+        font-size: rem(13);
+        font-weight: 700;
+        color:var(--text-color2);
+    }
+
+    img{
+        justify-self: end;
+    }
+
+    &__count{
+        font-size: rem(25);
+        font-weight: 700;
+        color:var(--text-color);
+    }
+
+    .card__change{
+        justify-self: end;
+        align-self: end;
+    }
+}

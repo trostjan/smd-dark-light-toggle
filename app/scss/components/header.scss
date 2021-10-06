@@ -1,0 +1,41 @@
+@use '../util' as *;
+
+.header__background{
+    background-color: var(--background-top);
+    height:rem(240);
+}
+
+.header{
+    margin-top: 0;
+    padding-top: rem(42);
+
+    @include breakpoint(medium){
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title{
+    }
+
+    &__followers{
+        font-weight: 700;
+        color: var(--text-color2);
+    }
+
+    h1{
+        color: var(--text-color);
+        letter-spacing: 0.2px;
+    }
+
+    &__divider{
+        color: var(--text-color2);
+        opacity: 0.3;
+        margin: rem(25) 0 rem(20) 0;
+
+
+        @include breakpoint(medium){
+            display:none;
+        }
+    }
+}
